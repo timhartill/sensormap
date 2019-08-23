@@ -24,16 +24,16 @@ To get started, clone this repository.
 
 The directory structure is:
 
-1. \analytics_server_docker - the dockerized sensorMap application
-2. \apis - source code for the backend node.js application that reads from the cassandra database and elasticsearch and provides information to the ui. 
-3. \ui - source code for the react-based visualization application
-4. \player - source code for the demo application that "plays" example json messages into the apache kafka raw queue
-5. \tracker - source code for the multicamera tracking application that consolidates object detections across cameras, handles overlapping fields of view etc
-6. \processor - source code for application that writes detections into the cassandra database and calculates anomalies over time which are written to the kafka anomaly topic
+1. [\analytics_server_docker](https://github.com/timhartill/sensormap/tree/master/analytics_server_docker) - the dockerized sensorMap application
+2. [\apis](https://github.com/timhartill/sensormap/tree/master/apis) - source code for the backend node.js application that reads from the cassandra database and elasticsearch and provides information to the ui. 
+3. [\ui](https://github.com/timhartill/sensormap/tree/master/ui) - source code for the react-based visualization application
+4. [\player](https://github.com/timhartill/sensormap/tree/master/player) - source code for the demo application that "plays" example json messages into the apache kafka raw queue
+5. [\tracker](https://github.com/timhartill/sensormap/tree/master/tracker) - source code for the multicamera tracking application that consolidates object detections across cameras, handles overlapping fields of view etc
+6. [\processor](https://github.com/timhartill/sensormap/tree/master/processor) - source code for application that writes detections into the cassandra database and calculates anomalies over time which are written to the kafka anomaly topic
 
 
 To run this application, the user needs to start the following applications in this order:
 
-1. **[Analytics Server]**: Check the README inside the `analytics_server_docker` directory and follow the steps to start the SensorMap docker containers.
-2. **[Player]**: Check the README inside the `player` directory and follow the steps to start the player once SensorMap is started.
+1. **[Analytics Server](https://github.com/timhartill/sensormap/tree/master/analytics_server_docker)**: Check the README inside the `analytics_server_docker` directory and follow the steps to start the SensorMap docker containers.
+2. **[Player](https://github.com/timhartill/sensormap/tree/master/player)**: Check the README inside the `player` directory and follow the steps to start the player once SensorMap is started.
 
