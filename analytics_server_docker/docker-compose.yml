@@ -1,0 +1,157 @@
+version: '2'
+services:
+
+  cassandra:
+    container_name: cassandra
+    build:
+      context: cassandra/
+    volumes:
+      - ./cassandra/config:/home/cassandra
+    ports:
+      - '7000:7000'
+      - '7001:7001'
+      - '7199:7199'
+      - '9042:9042'
+      - '9160:9160'
+    environment:
+      JVM_OPTS: "-Xms256M -Xmx500M"
+    networks:
+      - smart-garage-360
+
+  elasticsearch:
+    build:
+      context: elasticsearch/
+    container_name: elasticsearch  
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx500m -Xms256m"
+    networks:
+      - smart-garage-360
+
+  logstash:
+    build:
+      context: logstash/
+    container_name: logstash  
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    ports:
+      - "5000:5000"
+    environment:
+      LS_JAVA_OPTS: "-Xmx500m -Xms256m"
+    networks:
+      - smart-garage-360
+    depends_on:
+      - elasticsearch
+      - cassandra
+      - kafka
+
+  kibana:
+    build:
+      context: kibana/
+    container_name: kibana  
+    volumes:
+      - ./kibana/config/:/usr/share/kibana/config:ro
+    ports:
+      - "5601:5601"
+    networks:
+      - smart-garage-360
+    depends_on:
+      - elasticsearch
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      - smart-garage-360  
+  kafka:
+    build:
+      context: kafka/
+    container_name: kafka  
+    ports:
+      - "9092:9092"
+    networks:
+      - smart-garage-360  
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: ${IP_ADDRESS}
+      HOSTNAME_COMMAND: "route -n | awk '/UG[ \t]/{print $$2}'"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "metromind-start:8:1,metromind-raw:8:1,metromind-anomaly:8:1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - zookeeper  
+
+  ui:
+    container_name: ui
+    build:
+      context: nginx-ui/
+      args:
+        REACT_APP_BACKEND_IP_ADDRESS: ${IP_ADDRESS}
+        REACT_APP_BACKEND_PORT: 3000
+        REACT_APP_GOOGLE_MAP_API_KEY: ${GOOGLE_MAP_API_KEY}
+    ports:
+      - "80:80"
+    depends_on:
+      - apis
+    networks:
+      - smart-garage-360
+    environment:
+      REACT_APP_BACKEND_IP_ADDRESS: ${IP_ADDRESS}
+      REACT_APP_BACKEND_PORT: 3000
+      REACT_APP_GOOGLE_MAP_API_KEY: ${GOOGLE_MAP_API_KEY}
+
+  apis:
+    container_name: apis
+    environment:
+      IP_ADDRESS: ${IP_ADDRESS}
+      NODE_PORT: 3000
+    build:
+      context: node-apis/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - elasticsearch
+      - cassandra
+    volumes:
+      - ./node-apis/config/:/home/node/config:ro
+    command: npm start
+    networks:
+      - smart-garage-360
+
+  mctracker:
+    container_name: mctracker
+    build:
+      context: tracker/
+    depends_on:
+      - logstash
+    volumes:
+      - ./tracker/config:/home/python-tracker-module/config
+      - ./tracker/logs:/home/python-tracker-module/logs
+    networks:
+      - smart-garage-360
+
+  processor:
+    container_name: processor
+    build:
+      context: processor/
+    depends_on:
+      - logstash
+      - mctracker
+    volumes:
+      - ./processor/config:/home/python-processor-module/config
+      - ./processor/logs:/home/python-processor-module/logs
+    networks:
+      - smart-garage-360
+      
+networks:
+  smart-garage-360:
+    driver: bridge
+
+ 

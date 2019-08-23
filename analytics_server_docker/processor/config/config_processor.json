@@ -1,0 +1,12 @@
+{
+    "resample_time_sec": 0.5,
+    "input_queue_wait_sec":0.1,
+    "stalled_veh_classids":[2,3],
+    "stalled_veh_thresh_sec":5.0,
+    "stalled_veh_thresh_mtr":4.0,
+    "stalled_veh_delete_sec":1800.0,
+    "motionless_person_classids":[1],
+    "motionless_person_thresh_sec":6.0,
+    "motionless_person_thresh_mtr":1.5,
+    "motionless_person_delete_sec":1800.0
+}

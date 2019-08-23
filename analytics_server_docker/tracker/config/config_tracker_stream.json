@@ -1,0 +1,18 @@
+{
+    "profileTime": true,
+    "verboseLog": true,
+    "msgBrokerConfig": {
+        "inputKafkaServerUrl": "localhost:9092",
+        "inputKafkaTopic": "metromind-raw",
+        "outputKafkaServerUrl": "localhost:9092",
+        "outputKafkaTopic": "metromind-start"
+    },
+    "logConfig": {
+        "logDir":"/home/tim/gitrepos/sensormap/tracker/logs",
+        "logFile":"tracker.log",
+        "logProfileFile":"tracker_time_profile_log.csv",
+        "DEBUG_CLUSTER_FILE":"",
+        "DEBUG_MATCH_FILE":"",
+        "DEBUG_INP_POINTS_FILE":""
+    }
+}

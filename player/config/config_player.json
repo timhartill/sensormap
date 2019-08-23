@@ -1,0 +1,6 @@
+{
+    "resample_time_sec":0.5,
+    "write_recs_since_last":true,
+    "num_recs_to_write":20,
+    "is_live": true
+}

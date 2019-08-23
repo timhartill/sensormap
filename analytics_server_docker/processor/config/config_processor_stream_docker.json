@@ -1,0 +1,19 @@
+{
+    "profileTime":true,
+    "verboseLog":true,
+    "dbConfig": {"cassandraHost":"cassandra",
+                 "cassandraKeyspace":"metromind",
+                 "cassandraStartupWaitSec":15
+    },
+    "msgBrokerConfig": {
+        "inputKafkaServerUrl": "kafka:9092",
+        "inputKafkaTopic": "metromind-start",
+        "outputKafkaServerUrl": "kafka:9092",
+        "outputKafkaTopic": "metromind-anomaly"
+    },
+    "logConfig": {
+        "logDir":"/home/python-processor-module/logs",
+        "logFile":"processor.log",
+        "logProfileFile":"processor_time_profile_log.csv"
+    }
+}

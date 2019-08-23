@@ -1,0 +1,212 @@
+{
+    "@timestamp": "",
+    "analyticsModule": {
+        "description": "",
+        "id": "",
+        "source": "",
+        "version": "1.0"
+    },
+    "event": {
+        "id": "",
+        "type": ""
+    },
+    "mdsversion": "2.0",
+    "messageid": "",
+    "object": {
+        "bbox": {
+            "bottomrightx": 0,
+            "bottomrighty": 0,
+            "topleftx": 0,
+            "toplefty": 0
+        },
+        "bboxorig": {
+            "bottomrightx": 0,
+            "bottomrighty": 0,
+            "topleftx": 0,
+            "toplefty": 0
+        },
+        "coordinate": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "direction": 0.0,
+        "orientation": 0.0,
+        "speed": 0.0,
+        "id": "",
+        "trackerid": "",
+        "classid": "",
+        "classdesc": "",
+        "confidence":0.0,
+        "centroid": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "polygon": {
+                "a": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "b": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "c": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "d": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+        },
+        "location": {
+            "alt": 0.0,
+            "lat": 0.0,
+            "lon": 0.0
+        },
+        "vehicle": {
+            "color": "",
+            "confidence": 0.0,
+            "license": "",
+            "licenseState": "",
+            "make": "",
+            "model": "",
+            "type": ""
+        },
+        "signature": []
+    },
+    "place": {
+        "subplace": {
+            "coordinate": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "id": "0",
+            "level": "P1",
+            "name": ""
+        },
+        "id": "0",
+        "location": {
+            "alt": 0.0,
+            "lat": 0.0,
+            "lon": 0.0
+        },
+        "name": "endeavor",
+        "type": "facility"
+    },
+    "zone": {
+        "shapetype": "",
+        "radius": 0.0,
+        "poly1": {
+            "a": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "b": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "c": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "d": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        "poly2": {
+            "a": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "b": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "c": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "d": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        "poly3": {
+            "a": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "b": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "c": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "d": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        "poly4": {
+            "a": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "b": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "c": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "d": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        }
+    },
+    "sensor": {
+        "coordinate": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "description": "",
+        "id": "",
+        "location": {
+            "alt": 0.0,
+            "lat": 0.0,
+            "lon": 0.0
+        },
+        "type": "camera"
+    },
+    "videoPath": ""
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*$py.class
+.vscode/
+.DS_Store
+.spyproject
+
+*.log
+*.csv
+*.out
+*.txt
+*.json
+

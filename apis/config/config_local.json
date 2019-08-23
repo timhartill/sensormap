@@ -1,0 +1,118 @@
+{
+    "home": {
+        "name": "Home",
+        "username_api": "",
+        "googleMap": {
+            "defaultCenter": {
+                "lat": -36.87149838816816,
+                "lng": 174.71782664487387
+            },
+            "defaultZoom": 14,
+            "maxZoom": 21,
+            "minZoom": 10,
+            "mapTypeControl": true,
+            "mapTypeId": "roadmap"
+        },
+        "locations": [
+            {
+                "name": "garage",
+                "lat": -36.87149838816816,
+                "lng": 174.71782664487387
+            }
+        ]
+    },
+    "garage": {
+        "name": "Garage",
+        "defaults": {
+            "level": "P1"
+        },
+        "coordMult":{
+            "x": -1.0,
+            "y": -1.0
+        },
+        "bounds": {
+            "north": -36.8672794630000027,
+            "south": -36.8750919630000027,
+            "east": 174.7269566284080611,
+            "west": 174.7132672365919177
+        },
+        "googleMap": {
+            "defaultCenter": {
+                "lat": -36.87149838816816,
+                "lng": 174.71782664487387
+            },
+            "defaultZoom": 19,
+            "maxZoom": 21,
+            "minZoom": 10,
+            "mapTypeControl": true,
+            "mapTypeId": "roadmap"
+        },
+        "groundOverlay": {
+            "p1GroundImage": "assets/virat_dummy_campus_with_buildings_cameras_no_background_bldglayer_extents_transparentbkgd.png",
+            "p1Bounds": {
+                "north": -36.869962601,
+                "south": -36.873089353,
+                "east": 174.719573947,
+                "west": 174.716024164
+            }
+        },
+        "isLive": true,
+        "live": {
+            "webSocket": {
+                "url": "",
+                "startTimestamp": "",
+                "garageId": "endeavor",
+                "garageLevel": "P1",
+                "dialogAutoCloseSeconds": 5
+            },
+            "apis": {
+                "baseurl": "",
+                "alerts": "/es/alerts",
+                "events": "/es/events",
+                "kpi": "/stats/endeavor",
+                "startTimestamp": "",
+                "alertEventRefreshIntervalSeconds": 5,
+                "uiDelaySeconds": 2,
+                "alertEventListLength": 20
+            }
+        },
+        "playback": {
+            "webSocket": {
+                "url": "",
+                "startTimestamp": "2018-11-10T01:40:26.000Z",
+                "garageId": "endeavor",
+                "garageLevel": "P1",
+                "dialogAutoCloseSeconds": 5
+            },
+            "apis": {
+                "baseurl": "",
+                "alerts": "/es/alerts",
+                "events": "/es/events",
+                "kpi": "/stats/endeavor",
+                "startTimestamp": "2018-11-10T01:40:26.000Z",
+                "alertEventRefreshIntervalSeconds": 5,
+                "autoRefreshIntervalMinutes": 30,
+                "uiDelaySeconds": 0,
+                "alertEventListLength": 20
+            }
+        },
+        "backend": {
+            "cassandraHosts": ["localhost:9042"],
+            "cassandraKeyspace": "metromind",
+            "esHost": "localhost",
+            "esPort": 9200,
+            "esAnomalyIndex": "metromind-anomaly-day2*",
+            "esEventsIndex": "metromind-start-day2*",
+            "eventCompressionSize":2,
+            "anomalyEventQuerySize":25,
+            "eventApiQueryResultSize":200,
+            "parkingSpotConfigFile": "config/parkingSpots.csv",
+            "sensorType": "Camera",
+            "garageLevel": "P1",
+            "webSocketSendPeriodInMs": 500,
+            "carRemovalPeriodInMs": 5000,
+            "originLat": -36.87149838816816,
+            "originLon": 174.71782664487387
+        }
+    }
+}

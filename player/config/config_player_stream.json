@@ -1,0 +1,18 @@
+{
+    "profileTime":true,
+    "verboseLog":false,
+    "inputFileConfig": {"inputDir":"/home/tim/gitrepos/sensormap/player/json_playback",
+                        "inputFile":"virat_json_fps_5.0_Tracker_False_sorted_secs_900.json"
+    },
+    "msgBrokerConfig": {
+        "inputKafkaServerUrl": "",
+        "inputKafkaTopic": "",
+        "outputKafkaServerUrl": "localhost:9092",
+        "outputKafkaTopic": "metromind-raw"
+    },
+    "logConfig": {
+        "logDir":"/home/tim/gitrepos/sensormap/player/logs",
+        "logFile":"player.log",
+        "logProfileFile":"player_time_profile_log.csv"
+    }
+}

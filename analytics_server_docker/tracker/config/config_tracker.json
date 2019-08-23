@@ -1,0 +1,38 @@
+{
+     "overlapping_camera_ids": {
+          "0000": ["0001"],
+          "0400": ["0401"]
+     },
+     "timeRange": {},
+     "IGNORE_DETECTION_DICT_MOVING": {
+          "0100": [
+               [
+                    [
+                         -96.04848150771043,
+                         -8.429967770161461
+                    ],
+                    [
+                         1.2261507739406408,
+                         -9.196328476611548
+                    ],
+                    [
+                         0.4087157199843566,
+                         -59.26522795363098
+                    ],
+                    [
+                         -96.66126454624842,
+                         -59.77613509126437
+                    ]
+               ]
+          ]
+     },
+     "dont_match_cameras_adj_list": {},
+     "resample_time_sec": 0.5,
+     "input_queue_wait_sec": 0.5,
+     "object_ids_track_across_frames": false,
+     "trackerConfig": {
+          "CLUSTER_DIST_THRESH_IN_M": 15.0,
+          "MATCH_MAX_DIST_IN_M": 20.0,
+          "CARRY_OVER_LIST_PRUNE_TIME_IN_SEC": 3.0
+     }
+}
