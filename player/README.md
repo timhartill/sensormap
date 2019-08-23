@@ -1,9 +1,9 @@
-# Streaming Processor
+# Streaming Player
 
 # Table of contents
 1. [Introduction](#introduction)
 2. [Configuration](#configuration)
-3. [Running Player](#running-tracker)
+3. [Running Player](#running-player)
 
 # Introduction
 
@@ -25,13 +25,15 @@ The Processor takes in two config files:
 # Running Player
 
 Run the following commands:
-        a) cd /sensormap/player/usecasecode/player
-        b) Download json file from https://drive.google.com/file/d/1YYoDzcDVQOd0cSrr6mGk5N16mfet9R99/view?usp=sharing and put into the /json_playback subdirectory
-        c) Update /config/config_player_stream.json:
-             "inputFileConfig": {"inputDir":"/your/directory/gitrepos/sensormap/player/json_playback",
-                                 "inputFile":"your downloaded json file.json"
- 
-        b) python stream_player.py --sconfig=`<path to stream config file>` --config=`<path to processor config file>`
+1. cd /sensormap/player/usecasecode/player
+
+2. Download json file from https://drive.google.com/file/d/1YYoDzcDVQOd0cSrr6mGk5N16mfet9R99/view?usp=sharing and put into the /json_playback subdirectory
+
+3. Update /config/config_player_stream.json:
+            "inputFileConfig": {"inputDir":"/your/directory/gitrepos/sensormap/player/json_playback",
+                                "inputFile":"your downloaded json file.json"}
+
+4. python stream_player.py --sconfig=`<path to stream config file>` --config=`<path to processor config file>`
 
 
 
