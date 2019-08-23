@@ -49,11 +49,11 @@ If live mode has to be used, then:
 
     1. To your bash config file add code to set the REACT_.., IP_ADDRESS, GOOGLE_MAP_API_KEY env variables appropriately.
     2. Update directory paths in each module's configuration files - both those read as a part of docker container startup and, if modifying the application, those config directories in the respective source code directories.
-    3. Edit 'start.sh' to set the name of your network adapter to enable automatic ip address detection (if desired, you can also reuse this code in your bash config file to set IP_ADDRESS automatically on startup). Also set the Google maps key value.
+    3. Edit 'start.sh' to set the name of your network adapter to enable automatic ip address detection (if desired, you can also reuse this code in your bash config file to set IP_ADDRESS automatically on startup). 
 
 3. Starting Docker Containers
 
-    The dockers can be started either by running automation script or by starting them manually.
+    The docker containers can be started either by running automation script or by starting them manually.
 
     **Automation Script**
 
@@ -109,7 +109,7 @@ If live mode has to be used, then:
     
     **Note**:
     + The application providing the source json info (player by default) should be started only after the analytics server is up and running.
-    + Remember to shut down the docker-containers of analytics server once the deepstream is shut down.
+    + Remember to shut down the docker containers of the analytics server once the player is shut down.
 
 
 5.  **Generate Data** (Optional) , for test purpose ONLY, normally the SensorMap application will read from cameras and send metadata to Analytics Server 

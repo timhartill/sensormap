@@ -2,7 +2,9 @@
 
 For screenshot and link to download demo json playback data go to bottom of page at https://www.neuralition.com
 
-This application displays detected objects in realtime on a map. Typically inputs would based on json output from performing realtime object detection on multiple video camera input streams but here we also provide a player application that will stream pre-recorded json. Aside from video streams this app could also be used to display events from IoT streams or any other sensor type where displaying the result on a geographical map makes sense.
+This application displays detected objects in realtime on a map. 
+
+Typically inputs would based on json output from performing realtime object detection on multiple video camera input streams but here we also provide a player application that will stream pre-recorded json. Aside from video streams this app could also be used to display events from IoT streams or any other sensor type where displaying the result on a geographical map makes sense.
 
 
 ![UI](readme-images/sensormap_full.png?raw=true "UI")
