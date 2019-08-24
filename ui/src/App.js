@@ -16,6 +16,8 @@ import Loader from './Component/UI/Loader/Loader';
  * 3) declare the routes for home/garage page;
  * 4) offline detection. 
  */
+
+
 class App extends Component {
   state = {
     envVar: {}
