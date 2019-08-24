@@ -66,7 +66,7 @@ UI will also require Apis to be up and running. Follow the README instructions i
 
 Export the following Environment variables if running UI outside dockers:
 + REACT_APP_BACKEND_IP_ADDRESS - The IP Address of the API server
-+ REACT_APP_BACKEND_PORT - The port where the server is listening for requests
++ REACT_APP_BACKEND_PORT - The port where the server is listening for requests (typically 3000)
 + REACT_APP_GOOGLE_MAP_API_KEY - Google Map API key
 
 Follow the instructions in this [link](https://developers.google.com/maps/documentation/javascript/get-api-key) to get an api key for Google Maps.

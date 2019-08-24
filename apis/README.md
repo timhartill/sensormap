@@ -20,17 +20,14 @@ It also requires `elasticsearch` and `cassandra` database.
 
 Export the following Environment variables if running Apis outside dockers:
 + **IP_ADDRESS** : IP Address of the host machine. If running locally, set it to localhost.
-+ **NODE_PORT** : The port where server should be listening for requests.
++ **NODE_PORT** : The port where server should be listening for requests (typically 3000).
 
 ### Installation
 
 Install `Node.js`, `cassandra`, `elasticsearch` as they are pre-requisites for this application.
 
-SensorMap is a heavily modified version of the Deepstream 360 application cloned from this repository:
-
-    git clone https://github.com/NVIDIA-AI-IOT/deepstream_360_d_smart_parking_application.git
         
-use the following command to change the current directory.
+Use the following command to change the current directory.
 
     cd ./apis
     

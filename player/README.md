@@ -35,5 +35,7 @@ Run the following commands:
 
 4. python stream_player.py --sconfig=`<path to stream config file>` --config=`<path to processor config file>`
 
+    **Note**: 
+    + It takes around 2 minutes for the player to load the file and get the streaming displaying in the UI.
 
 
