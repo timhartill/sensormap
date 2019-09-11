@@ -228,3 +228,6 @@ The 3 settings that differentiate `live` and `playback` modes are as follows:
             }
         },
 ```
+**Object Classes**
+
+Multiple sets of object classes along with each class's display color/style can be configured in the JSON configuration file under the "classes" key. Set the classes.useClass key to the name of the class set you wish to use. 

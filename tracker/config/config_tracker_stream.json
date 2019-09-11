@@ -1,6 +1,7 @@
 {
     "profileTime": true,
     "verboseLog": true,
+    "msg_signature_add_timestamps": true,
     "msgBrokerConfig": {
         "inputKafkaServerUrl": "localhost:9092",
         "inputKafkaTopic": "metromind-raw",

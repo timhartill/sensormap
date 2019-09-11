@@ -1,6 +1,7 @@
 {
     "profileTime":true,
     "verboseLog":true,
+    "msg_signature_add_timestamps": true,
     "dbConfig": {"cassandraHost":"localhost",
                  "cassandraKeyspace":"metromind",
                  "cassandraStartupWaitSec":0

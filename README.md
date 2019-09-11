@@ -9,11 +9,11 @@ Typically inputs would based on json output from performing realtime object dete
 
 ![UI](readme-images/sensormap_full.png?raw=true "UI")
 
-This document describes the full end to end SensorMap application that is a heavily modified version of the Nvidia DeepStream 360 application (https://github.com/NVIDIA-AI-IOT/deepstream_360_d_smart_parking_application.git). Major changes include:
+This document describes the full end to end SensorMap application that is a heavily modified version of the Nvidia DeepStream 360 application (https://github.com/NVIDIA-AI-IOT/deepstream_360_d_smart_parking_application.git). Whereas that application is specifically a demo parking garage, SensorMap is designed to be a generic application for displaying different types of objects. Major changes include:
 
 - Mocks up a demo "Campus" based on multi-camera video outputs from the Virat dataset (http://www.viratdata.org). Note that the mapping between the Virat camera views and the geographical map is very approximate and just for demonstration purposes!
 - Made generic to work with multiple classes of objects.
-- Displays different classes of objects with different colours/styles.
+- Displays different classes of objects with different colors/styles. Classes and styles are configurable.
 - Removed Apache Spark module in favour of a python 'processor' module to facilitate running in smaller memory footprint.
 - Added a python 'player' application that writes recorded json into the raw queue to facilitate testing in environments without access to a gpu.
 - Various updates to dockerfile configurations to enable external config files and log files.

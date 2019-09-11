@@ -93,11 +93,45 @@ class CarMarker extends Component {
     }
 
     render() {
-        let icon, info, marker, scaler;
+        let icon, info, marker, scaler, colorStr;
         /* decide the size and the color of obj icon shown on map */
         
         if (this.props.obj !== undefined) {
             /* decide the colour and scale based on class of object */
+            scaler = 1
+            colorStr = 'black'
+            if (this.props.objectClasses.hasOwnProperty(this.props.obj.classid)) {
+                if (this.props.objectClasses[this.props.obj.classid].hasOwnProperty('color')) {
+                  colorStr = this.props.objectClasses[this.props.obj.classid].color;
+                }    
+                if (this.props.objectClasses[this.props.obj.classid].hasOwnProperty('scale')) {
+                    scaler = this.props.objectClasses[this.props.obj.classid].scale;
+                  }    
+                }            
+            switch (colorStr) {
+                case 'black':
+                    marker = black;
+                    break;
+                case 'green':
+                    marker = green;
+                    break;
+                case 'red':
+                    marker = red;
+                    break;
+                case 'blue':
+                    marker = blue;
+                    break;
+                case 'mustard':
+                    marker = mustard;
+                    break;
+                case 'pink':
+                    marker = pink;
+                    break; 
+                default:
+                    marker = black;
+                    break;                          
+            }
+            /*
             switch (this.props.obj.classid) {
                 case '0': // other
                     marker = black;
@@ -128,6 +162,7 @@ class CarMarker extends Component {
                     scaler = 1
                     break;                          
             }
+            */
             info = this.props.obj.trackerid;
             /* for any obj, show dot in appropriate size*/
             switch (this.props.zoom) {

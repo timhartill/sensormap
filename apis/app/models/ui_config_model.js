@@ -21,6 +21,8 @@ module.exports = {
         let backendPort=process.env.NODE_PORT;
         configObj.garage[apiMode].webSocket.url="ws://"+hostIpAddress+":"+backendPort;
         configObj.garage[apiMode].apis.baseurl="http://"+hostIpAddress+":"+backendPort;
+        // TJH Added: Set class id set
+        configObj.classes = configObj.classes[configObj.classes.useClass]
         res.json(configObj);
     }
 }

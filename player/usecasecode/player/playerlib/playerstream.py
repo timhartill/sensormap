@@ -31,7 +31,7 @@ class PlayerStream:
     def __init__(self, in_file, in_kafkaservers, in_kafkatopics, 
                  out_kafkaservers, out_kafkatopics,
                  db, keyspace,
-                 config_file, time_prof_flag=False, verbose_log=False,
+                 config_file, time_prof_flag=False, verbose_log=False, add_timestamps=False,
                  log_profile_file="processor_time_profile_log.csv"):
         """
         Initialize player
@@ -56,6 +56,7 @@ class PlayerStream:
         self.time_prof_flag = time_prof_flag
         self.verbose_log = verbose_log
         self.log_profile_file = log_profile_file
+        self.add_timestamps = add_timestamps
         self.config = json.load(open(config_file))
 
         # Schema validation
@@ -323,6 +324,9 @@ class PlayerStream:
         """
         if self.producer is not None:
             for json_ele in json_list:
+                if self.add_timestamps:
+                    json_ele['object']['signature'].append(time.time()) # 0 = fake video frame read time
+                    json_ele['object']['signature'].append(time.time()) # 1 = fake write to kafka topic time
                 self.producer.send(self.out_kafkatopics, json_ele)
         return
 

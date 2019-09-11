@@ -100,6 +100,7 @@ class CarMarkers extends Component {
                         isOpen={isOpen}
                         zoom={this.props.zoom}
                         config={this.props.config}
+                        objectClasses={this.props.objectClasses}
                     />
                 );
             }

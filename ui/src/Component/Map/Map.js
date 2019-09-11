@@ -92,6 +92,7 @@ class Map extends Component {
                     garageLevel={this.props.garageLevel}
                     bounds={this.state.bounds}
                     config={this.props.location}
+                    objectClasses={this.props.objectClasses}
                 />,
                 // *<CameraMarker
                 //     zoom={this.state.zoom}

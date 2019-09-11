@@ -35,7 +35,7 @@ class ProcessorStream:
     def __init__(self, in_kafkaservers, in_kafkatopics, 
                  out_kafkaservers, out_kafkatopics,
                  db, keyspace,
-                 config_file, time_prof_flag=False, verbose_log=False,
+                 config_file, time_prof_flag=False, verbose_log=False, add_timestamps=False,
                  log_profile_file="processor_time_profile_log.csv"):
         """
         Initialize processor tracker
@@ -57,6 +57,7 @@ class ProcessorStream:
         self.keyspace = keyspace
         self.time_prof_flag = time_prof_flag
         self.verbose_log = verbose_log
+        self.add_timestamps = add_timestamps
         self.log_profile_file = log_profile_file
         self.config = json.load(open(config_file))
 
@@ -212,6 +213,8 @@ class ProcessorStream:
                     #curr_time = int(round(time.time() * 1000))
                     #kafka_ts = msg.timestamp
                     #recs.append({'curTime': curr_time, 'kafkaTs': kafka_ts})
+                    if self.add_timestamps:
+                        msg.value['object']['signature'].append(time.time())  #5th signature item  = processor read from kafka
                     json_list.append(msg.value)
 
             iters += 1
@@ -344,6 +347,8 @@ class ProcessorStream:
         detections = flow = db_write.get('detection', [])
         if detections:
             for d in detections:
+                if self.add_timestamps:
+                    d['object']['signature'].append(time.time())  #6th signature item = processor write to cassandra
                 future = self.session.execute_async(self.query_i_objectmarker, [json.dumps(d)])
                 future.add_callbacks(self.handle_success, self.handle_error)
         

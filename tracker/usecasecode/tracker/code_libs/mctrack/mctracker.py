@@ -564,9 +564,9 @@ class MulticamTracker:
 
     def get_cluster(self, json_list, max_d, params):
         """
-        This method clusters all vehicle detections in the json_list. Currently
+        This method clusters all detections in the json_list. Currently
         it:
-        1. computes distance matrix between vehicle detections
+        1. computes distance matrix between detections
         2. hierarchical aggregation
         3. Cuts the dendrogram at max_d
 

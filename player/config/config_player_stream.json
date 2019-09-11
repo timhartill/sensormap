@@ -1,6 +1,7 @@
 {
     "profileTime":true,
     "verboseLog":false,
+    "msg_signature_add_timestamps": true,
     "inputFileConfig": {"inputDir":"/home/tim/gitrepos/sensormap/player/json_playback",
                         "inputFile":"virat_json_fps_5.0_Tracker_False_sorted_secs_900.json"
     },

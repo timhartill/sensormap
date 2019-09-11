@@ -113,6 +113,7 @@ def main():
     
     time_it_flag = stream_config.get("profileTime", False)
     verbose_flag = stream_config.get("verboseLog", False)
+    add_timestamps = stream_config.get("msg_signature_add_timestamps", False)
     
     startup_sleep = (stream_config
               .get("dbConfig", {})
@@ -153,6 +154,7 @@ def main():
           "cassandra startup wait secs={}\n"
           "Time profile={}\n"
           "Verbose log={}\n"
+          "Add timing timestamps={}\n"
           "Log file={}\n"
           "Time Profile file={}"
           "Processor Config File={}\n".format(ckafka, itopic,
@@ -160,6 +162,7 @@ def main():
                                                db, keyspace, startup_sleep,
                                                time_it_flag,
                                                verbose_flag,
+                                               add_timestamps,
                                                log_file,
                                                log_profile_file,
                                                args.config))
@@ -181,6 +184,7 @@ def main():
                                                 pkafka, otopic, db, keyspace,
                                                 args.config, time_it_flag, 
                                                 verbose_log=verbose_flag,
+                                                add_timestamps=add_timestamps,
                                                 log_profile_file=log_profile_file)
     processor_obj.start_processor()
 

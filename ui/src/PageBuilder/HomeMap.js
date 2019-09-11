@@ -179,6 +179,7 @@ class HomeMap extends Component {
                                 zoom={this.state.zoom}
                                 garageLevel={this.state.garageLevel}
                                 location={this.props.locations.garage}
+                                objectClasses={this.props.locations.classes}
                             />
                         </div>
                     </div>

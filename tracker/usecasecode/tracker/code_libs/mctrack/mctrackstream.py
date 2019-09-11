@@ -36,7 +36,7 @@ class McTrackerStream:
     """
 
     def __init__(self, in_kafkaservers, in_kafkatopics, out_kafkaservers,
-                 out_kafkatopics, config_file, time_prof_flag=False, verbose_log=False,
+                 out_kafkatopics, config_file, time_prof_flag=False, verbose_log=False, add_timestamps=False,
                  log_profile_file="tracker_time_profile_log.csv",
                  log_config={}):
         """
@@ -56,6 +56,7 @@ class McTrackerStream:
         self.out_kafkatopics = out_kafkatopics
         self.time_prof_flag = time_prof_flag
         self.verbose_log = verbose_log
+        self.add_timestamps = add_timestamps
         self.log_profile_file = log_profile_file
         self.log_config = log_config        
         self.config = json.load(open(config_file))
@@ -176,6 +177,8 @@ class McTrackerStream:
                         curr_time = int(round(time.time() * 1000))
                         kafka_ts = msg.timestamp
                         recs.append({'currTime': curr_time, 'kafkaTs': kafka_ts})
+                    if self.add_timestamps:
+                        msg.value['object']['signature'].append(time.time())  #3rd signature item  = tracker read from kafka
                     json_list.append(msg.value)
 
             if self.time_prof_flag:
@@ -291,4 +294,6 @@ class McTrackerStream:
         """
         if self.producer is not None:
             for json_ele in json_list:
+                if self.add_timestamps:
+                    json_ele['object']['signature'].append(time.time())  # 4th signature item = tracker write to kafka topic
                 self.producer.send(self.out_kafkatopics, json_ele)
